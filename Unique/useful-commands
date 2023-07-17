@@ -1,0 +1,39 @@
+
+
+
+    
+# Curl commands for REST Server resource Unique
+# Post
+curl -X POST -H "Content-Type: application/json" \
+-d '{"Unique": "sample string"}' \
+http://localhost:5634/v1/uniques
+
+# Get
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:5634/v1/uniques
+
+# Put
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"Unique": "sample string"}' \
+http://localhost:5634/v1/uniques/123
+
+# Put
+### wrong id passed in param
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"Unique": "sample string"}' \
+http://localhost:5634/v1/uniques/1234
+
+# Get  (retrieve specific Unique)
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:5634/v1/uniques/123
+
+# Delete
+curl -X DELETE -H "Content-Type: application/json" \
+http://localhost:5634/v1/uniques/123
+
+    
+
+# when mysql throws error about server connection, fire below commands
+# CREATE USER 'root'@'%' IDENTIFIED BY 'password';
+# GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+
